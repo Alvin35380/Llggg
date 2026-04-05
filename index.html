@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="joinGame()">CLICK TO JOIN</button>
+
+<script>
+function getJobId() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("jobId");
+}
+
+function joinGame() {
+  let placeId = "109983668079237";
+  let jobId = getJobId();
+
+  if (!jobId) {
+    alert("No jobId provided");
+    return;
+  }
+
+  window.location.href = `roblox://placeId=${placeId}&gameInstanceId=${jobId}`;
+}
+</script>
+
+</body>
+</html>
